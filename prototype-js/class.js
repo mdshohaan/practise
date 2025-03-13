@@ -1,4 +1,4 @@
-// Covert to class object from index.js
+// Covert to class object from old-class.js
 class Person {
   constructor(name, age) {
     this.name = name;
