@@ -32,3 +32,42 @@ Prices.delete("banana");
 
 // Check the size after deletion
 console.log(Prices.size);
+
+// Separate Chaining: In separate chaining, each slot in the hash table's array contains a linked list (or another data structure that can hold multiple items). When a collision occurs, the new key-value pair is added to the end of the linked list at the corresponding index.
+class HashMap {
+  constructor() {
+    this.table = new Array(100).fill(null).map(() => []);
+  }
+
+  put(key, value) {
+    const index = this.hash(key);
+    const chain = this.table[index];
+    const existingPair = chain.find(([existingKey]) => existingKey === key);
+
+    if (existingPair) {
+      existingPair[1] = value;
+    } else {
+      chain.push([key, value]);
+    }
+  }
+
+  get(key) {
+    const index = this.hash(key);
+    const chain = this.table[index];
+    const pair = chain.find(([existingKey]) => existingKey === key);
+
+    if (pair) {
+      return pair[1];
+    }
+
+    return null;
+  }
+
+  hash(key) {
+    let hash = 0;
+    for (let i = 0; i < key.length; i++) {
+      hash += key.charCodeAt(i);
+    }
+    return hash % this.table.length;
+  }
+}
