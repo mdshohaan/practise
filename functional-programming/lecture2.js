@@ -53,3 +53,13 @@ function base(b) {
 }
 var power = base(2); // [Function (anonymous)]
 var results = power(10); // 100
+
+// •	power(10) মানে base(2)(10)
+// •	এখানে n = 10 এবং b = 2 (কারণ base(2) তে b সংরক্ষিত ছিল)।
+// •	লুপ ২ বার চলবে (b = 2), এবং result আপডেট হবে—
+
+// Loop Execution:
+// 1.	প্রথম লুপ (i = 0): result = 1 * 10 = 10
+// 2.	দ্বিতীয় লুপ (i = 1): result = 10 * 10 = 100
+
+// •	শেষে result = 100 রিটার্ন করবে।
