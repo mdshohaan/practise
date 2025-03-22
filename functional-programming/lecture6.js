@@ -40,5 +40,22 @@ function mySelf(person, callback) {
   }
 }
 mySelf(me, function (email) {
-  console.log(email);
+  console.log(email); // 'abc@gmail.com'
 });
+
+// Two callback
+function print(data, callback1, callback2) {
+  console.log(data);
+  callback1(data);
+  callback2(data);
+}
+
+print(
+  "A little Stranger",
+  (data) => {
+    console.log(data.toUpperCase());
+  },
+  (data) => {
+    console.log(data.toLowerCase());
+  }
+);
