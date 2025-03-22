@@ -46,16 +46,16 @@ mySelf(me, function (email) {
 // Two callback
 function print(data, callback1, callback2) {
   console.log(data);
-  callback1(data);
-  callback2(data);
+  callback1(data, 2);
+  callback2(data, 3);
 }
 
 print(
   "A little Stranger",
-  (data) => {
-    console.log(data.toUpperCase());
+  (data, a) => {
+    console.log(data.toUpperCase(), a);
   },
-  (data) => {
-    console.log(data.toLowerCase());
+  (data, b) => {
+    console.log(data.toLowerCase(), 3);
   }
 );
