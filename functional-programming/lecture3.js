@@ -36,3 +36,15 @@ function outer(x, y) {
 }
 
 console.log(outer(2, 5));
+
+function counter() {
+  let count = 0;
+  function increment() {
+    return (count += 1);
+  }
+  return increment;
+}
+
+const myCounter = counter(); // outer func
+console.log(myCounter());
+console.log(myCounter());
