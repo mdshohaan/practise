@@ -73,3 +73,27 @@ function async() {
 }
 
 async();
+
+// another one
+
+function apiFunc(url) {
+  fetch(url).then((res) => {
+    console.log();
+  });
+}
+apiFunc("https://jsonplaceholder.typicode.com/todos/1");
+console.log("I am here");
+
+// Closure scope
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i); // 0 1 2
+  }, 3000);
+}
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i); // 3 3 3
+  }, 3000);
+}
+//  bcz for loop after finished then call setTimeout, also loop value contaion last value 3 then call set time out
