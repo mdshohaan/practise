@@ -63,3 +63,13 @@ for (let i = 0; i < 100000; i++) {
   var a = Math.random() * 10000;
 }
 console.log(timer());
+
+// Async Closure
+function async() {
+  var a = 20;
+  setTimeout(() => {
+    console.log(a); // 20
+  }, 3000);
+}
+
+async();
