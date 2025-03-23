@@ -17,8 +17,8 @@ people.sort((a, b) => {
 });
 // sort by Name
 people.sort((a, b) => {
-  if (a.name > b.name) return 1;
-  if (a.name < b.name) return -1;
+  if (a.name > b.name) return 1; // Descending Z -> A
+  if (a.name < b.name) return -1; // Ascending A -> Z
   return 0;
 });
 
